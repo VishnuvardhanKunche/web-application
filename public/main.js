@@ -1,6 +1,3 @@
-// public/main.js
-
-// Event listener for the search button
 document.getElementById("searchButton").addEventListener("click", async () => {
     const query = document.getElementById("searchInput").value.trim();
     if (!query) return;
@@ -9,7 +6,6 @@ document.getElementById("searchButton").addEventListener("click", async () => {
     displayResults(data);
   });
   
-  // Display search results on the page (client-side rendering)
   function displayResults(data) {
     const resultsDiv = document.getElementById("results");
     resultsDiv.innerHTML = "";
@@ -31,14 +27,12 @@ document.getElementById("searchButton").addEventListener("click", async () => {
     }
   }
   
-  // Fetch movie details when a movie is clicked
   async function fetchMovieDetails(id) {
     const response = await fetch(`/api/movie/${id}`);
     const movie = await response.json();
     displayMovieDetails(movie);
   }
   
-  // Display movie details on the page
   function displayMovieDetails(movie) {
     const detailsDiv = document.getElementById("movieDetails");
     detailsDiv.innerHTML = `
